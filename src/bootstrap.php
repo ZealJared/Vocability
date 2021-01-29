@@ -1,0 +1,20 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+require_once __DIR__ . '/class.config.php';
+require_once __DIR__ . '/class.utility.php';
+require_once __DIR__ . '/class.database.php';
+require_once __DIR__ . '/class.model.php';
+require_once __DIR__ . '/class.user.php';
+require_once __DIR__ . '/class.word.php';
+require_once __DIR__ . '/class.story.php';
+require_once __DIR__ . '/class.wordList.php';
+require_once __DIR__ . '/class.wordListWord.php';
+require_once __DIR__ . '/class.storyPage.php';
+require_once __DIR__ . '/class.storyPageWord.php';
+require_once __DIR__ . '/class.userWord.php';
+require_once __DIR__ . '/class.request.php';
+require_once __DIR__ . '/class.response.php';
+require_once __DIR__ . '/class.app.php';
+require_once __DIR__ . '/class.route.php';
+require_once __DIR__ . '/class.query.php';

@@ -1,0 +1,9 @@
+UI
+  Admin
+    * story page audio
+    * store relative URLs for resources in the database
+    * delete uploaded files related to words and story pages when the records are deleted
+    @ story page review, test
+    @ delete word list/story page only if no words
+    @ user_word cascade delete on word delete
+    @ score story page questions
