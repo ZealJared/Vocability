@@ -1,25 +1,23 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import LoginView from './views/login.vue'
-import HomeView from './views/index.vue'
-import AdminView from './views/admin/index.vue'
-import UserListView from './views/admin/users/index.vue'
-import UserEditView from './views/admin/users/edit.vue'
-import WordListView from './views/admin/words/index.vue'
-import WordEditView from './views/admin/words/edit.vue'
-import StoryListView from './views/admin/stories/index.vue'
-import StoryEditView from './views/admin/stories/edit.vue'
-import WordListEditView from './views/admin/word_lists/edit.vue'
-import StoryPageEditView from './views/admin/story_pages/edit.vue'
-import StoryWordListsView from './views/story-word-lists.vue'
-import WordListReviewView from './views/word-list-review.vue'
+import VueRouter from 'vue-router'
+import LoginView from '../views/login.vue'
+import HomeView from '../views/index.vue'
+import AdminView from '../views/admin/index.vue'
+import UserListView from '../views/admin/users/index.vue'
+import UserEditView from '../views/admin/users/edit.vue'
+import WordListView from '../views/admin/words/index.vue'
+import WordEditView from '../views/admin/words/edit.vue'
+import StoryListView from '../views/admin/stories/index.vue'
+import StoryEditView from '../views/admin/stories/edit.vue'
+import WordListEditView from '../views/admin/word_lists/edit.vue'
+import StoryPageEditView from '../views/admin/story_pages/edit.vue'
+import StoryWordListsView from '../views/story-word-lists.vue'
+import WordListReviewView from '../views/word-list-review.vue'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes: [
+const routes = [
+  [
     {
       path: '/login',
       name: 'login',
@@ -91,4 +89,12 @@ export default new Router({
       component: WordListReviewView
     }
   ]
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
 })
+
+export default router
