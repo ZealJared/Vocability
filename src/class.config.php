@@ -3,7 +3,7 @@ class Config
 {
   public static function getBaseUrl(): string
   {
-    return "https://api.vocab.zealmayfield.com/";
+    return "https://vocability.api.zealmayfield.com/";
   }
 
   public static function getBaseFilePath(): string
