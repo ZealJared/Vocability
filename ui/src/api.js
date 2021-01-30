@@ -10,7 +10,7 @@ export default class Api {
     this.savedUser = JSON.parse(localStorage.getItem('user'))
   }
   request (method, url, data, noUser) {
-    url = 'https://vocability.api.zealmayfield.com/' + url
+    url = 'https://vocability-api.zealmayfield.com/' + url
     method = method.toUpperCase()
     let options = {
       method: method
