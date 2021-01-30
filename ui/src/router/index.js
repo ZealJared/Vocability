@@ -17,78 +17,76 @@ import WordListReviewView from '../views/word-list-review.vue'
 Vue.use(VueRouter)
 
 const routes = [
-  [
-    {
-      path: '/login',
-      name: 'login',
-      component: LoginView
-    },
-    {
-      path: '/home',
-      name: 'home',
-      component: HomeView
-    },
-    {
-      path: '/admin',
-      name: 'admin',
-      component: AdminView
-    },
-    {
-      path: '/admin/users',
-      name: 'user-list',
-      component: UserListView
-    },
-    {
-      path: '/admin/user/:id/edit',
-      name: 'user-edit',
-      component: UserEditView
-    },
-    {
-      path: '/admin/words',
-      name: 'word-list',
-      component: WordListView
-    },
-    {
-      path: '/admin/word/:id/edit',
-      name: 'word-edit',
-      component: WordEditView
-    },
-    {
-      path: '/admin/stories',
-      name: 'story-list',
-      component: StoryListView
-    },
-    {
-      path: '/admin/story/:id/edit',
-      name: 'story-edit',
-      component: StoryEditView
-    },
-    {
-      path: '/admin/word_list/:id/edit',
-      name: 'word-list-edit',
-      component: WordListEditView
-    },
-    {
-      path: '/admin/story_page/:id/edit',
-      name: 'story-page-edit',
-      component: StoryPageEditView
-    },
-    {
-      path: '/story/:id/word_lists',
-      name: 'story-word-lists',
-      component: StoryWordListsView
-    },
-    {
-      path: '/word_list/:id/review',
-      name: 'word-list-review',
-      component: WordListReviewView
-    },
-    {
-      path: '/word_list/:id/test',
-      name: 'word-list-test',
-      component: WordListReviewView
-    }
-  ]
+  {
+    path: '/login',
+    name: 'login',
+    component: LoginView
+  },
+  {
+    path: '/home',
+    name: 'home',
+    component: HomeView
+  },
+  {
+    path: '/admin',
+    name: 'admin',
+    component: AdminView
+  },
+  {
+    path: '/admin/users',
+    name: 'user-list',
+    component: UserListView
+  },
+  {
+    path: '/admin/user/:id/edit',
+    name: 'user-edit',
+    component: UserEditView
+  },
+  {
+    path: '/admin/words',
+    name: 'word-list',
+    component: WordListView
+  },
+  {
+    path: '/admin/word/:id/edit',
+    name: 'word-edit',
+    component: WordEditView
+  },
+  {
+    path: '/admin/stories',
+    name: 'story-list',
+    component: StoryListView
+  },
+  {
+    path: '/admin/story/:id/edit',
+    name: 'story-edit',
+    component: StoryEditView
+  },
+  {
+    path: '/admin/word_list/:id/edit',
+    name: 'word-list-edit',
+    component: WordListEditView
+  },
+  {
+    path: '/admin/story_page/:id/edit',
+    name: 'story-page-edit',
+    component: StoryPageEditView
+  },
+  {
+    path: '/story/:id/word_lists',
+    name: 'story-word-lists',
+    component: StoryWordListsView
+  },
+  {
+    path: '/word_list/:id/review',
+    name: 'word-list-review',
+    component: WordListReviewView
+  },
+  {
+    path: '/word_list/:id/test',
+    name: 'word-list-test',
+    component: WordListReviewView
+  }
 ]
 
 const router = new VueRouter({
