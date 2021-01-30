@@ -42,7 +42,7 @@ export default {
     }
   },
   async mounted () {
-    let userId = this.$route.params.id
+    const userId = this.$route.params.id
     this.user = await this.$api.getUser(userId)
   }
 }

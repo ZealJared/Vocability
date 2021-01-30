@@ -45,14 +45,14 @@ export default {
       this.$api.deleteWord(this.word.Id)
     },
     setIllustration (e) {
-      let reader = new FileReader()
+      const reader = new FileReader()
       reader.addEventListener('load', e => {
         this.word.Illustration = reader.result
       })
       reader.readAsDataURL(e.target.files[0])
     },
     setPronunciation (e) {
-      let reader = new FileReader()
+      const reader = new FileReader()
       reader.addEventListener('load', e => {
         this.word.Pronunciation = reader.result
       })
@@ -60,7 +60,7 @@ export default {
     }
   },
   async mounted () {
-    let wordId = this.$route.params.id
+    const wordId = this.$route.params.id
     this.word = await this.$api.getWord(wordId)
   }
 }

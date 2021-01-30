@@ -58,9 +58,9 @@ export default {
       return this.review ? 0 : 5
     },
     wordOptions () {
-      let correctOptions = this.words.filter(theWord => theWord.extra.$storyPageId && theWord.extra.$storyPageId.split(',').includes(this.storyPageId))
-      let incorrectOptions = this.words.filter(theWord => !theWord.extra.$storyPageId || !theWord.extra.$storyPageId.split(',').includes(this.storyPageId)).sort(() => Math.random() - 0.5).slice(0, this.incorrectOptionCount)
-      let allOptions = correctOptions.concat(incorrectOptions).sort(() => Math.random() - 0.5)
+      const correctOptions = this.words.filter(theWord => theWord.extra.$storyPageId && theWord.extra.$storyPageId.split(',').includes(this.storyPageId))
+      const incorrectOptions = this.words.filter(theWord => !theWord.extra.$storyPageId || !theWord.extra.$storyPageId.split(',').includes(this.storyPageId)).sort(() => Math.random() - 0.5).slice(0, this.incorrectOptionCount)
+      const allOptions = correctOptions.concat(incorrectOptions).sort(() => Math.random() - 0.5)
       return allOptions
     },
     isCorrect () {
@@ -75,7 +75,7 @@ export default {
       if (this.correctAnswers.includes(wordId) || this.incorrectAnswers.includes(wordId)) {
         return
       }
-      let word = this.words.find(word => word.Id === wordId)
+      const word = this.words.find(word => word.Id === wordId)
       if (word.extra.$storyPageId.split(',').includes(this.storyPageId)) {
         this.correctAnswers.push(wordId)
       } else {

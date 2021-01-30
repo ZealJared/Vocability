@@ -37,8 +37,8 @@ export default new Vuex.Store({
       state.words = payload
     },
     word: (state, payload) => {
-      let theWord = payload
-      let wordIndex = state.words.findIndex(word => word.Id === theWord.Id)
+      const theWord = payload
+      const wordIndex = state.words.findIndex(word => word.Id === theWord.Id)
       if (wordIndex < 0) {
         state.words.push(theWord)
       } else {
@@ -46,7 +46,7 @@ export default new Vuex.Store({
       }
     },
     deleteWord: (state, payload) => {
-      let index = state.words.findIndex(word => word.Id === payload)
+      const index = state.words.findIndex(word => word.Id === payload)
       state.words.splice(index, 1)
     }
   }

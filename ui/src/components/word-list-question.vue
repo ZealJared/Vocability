@@ -51,8 +51,8 @@ export default {
       return this.reviewMode ? 0 : 5
     },
     wordOptions () {
-      let incorrectOptions = this.words.filter(word => word.Id !== this.word.Id).sort(() => Math.random() - 0.5)
-      let wordOptions = incorrectOptions.slice(0, this.incorrectOptionCount)
+      const incorrectOptions = this.words.filter(word => word.Id !== this.word.Id).sort(() => Math.random() - 0.5)
+      const wordOptions = incorrectOptions.slice(0, this.incorrectOptionCount)
       wordOptions.push(this.word)
       wordOptions.sort(() => Math.random() - 0.5)
       return wordOptions
@@ -74,7 +74,7 @@ export default {
         this.showRight = true
         return
       }
-      let incorrectAnswerCost = 100 / (this.wordOptions.length - 1)
+      const incorrectAnswerCost = 100 / (this.wordOptions.length - 1)
       this.score -= incorrectAnswerCost
       if (this.score <= 0) {
         this.score = 0

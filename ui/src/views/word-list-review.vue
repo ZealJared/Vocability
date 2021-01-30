@@ -38,11 +38,11 @@ export default {
       return this.$route.path.match(/review$/) !== null
     },
     isStoryPageQuestion () {
-      let wordExists = !!this.word
+      const wordExists = !!this.word
       if (!wordExists) {
         return false
       }
-      let wordHasStoryPage = (this.word.extra.$storyPageId !== null)
+      const wordHasStoryPage = (this.word.extra.$storyPageId !== null)
       let wordStoryPageIsComplete = true
       if (wordHasStoryPage) {
         this.word.extra.$storyPageId.split(',').forEach(storyPageId => {
@@ -52,8 +52,8 @@ export default {
           }
         })
       }
-      let treatAsWordListQuestion = (!wordHasStoryPage || wordStoryPageIsComplete)
-      let reviewIsComplete = this.complete
+      const treatAsWordListQuestion = (!wordHasStoryPage || wordStoryPageIsComplete)
+      const reviewIsComplete = this.complete
       return !treatAsWordListQuestion && !reviewIsComplete
     }
   },
@@ -67,14 +67,14 @@ export default {
       this.storyPageId = storyPageId
     },
     nextQuestion () {
-      let index = this.words.findIndex(word => word.Id === this.word.Id)
+      const index = this.words.findIndex(word => word.Id === this.word.Id)
       this.word = this.words[index + 1]
       if (!this.word) {
         this.complete = true
       }
     },
     storyPageNextQuestion () {
-      let index = this.words.findIndex(word => word.Id === this.word.Id)
+      const index = this.words.findIndex(word => word.Id === this.word.Id)
       this.words.splice(index, 1)
       this.words.push(this.word) // add used word to end of list so it will come around to a word-list style question as well
       this.storyPagesComplete.push(this.storyPageId)

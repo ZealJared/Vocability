@@ -59,30 +59,30 @@ export default {
       this.$api.deleteStoryPage(this.storyPage.Id)
     },
     setIllustration (e) {
-      let reader = new FileReader()
+      const reader = new FileReader()
       reader.addEventListener('load', e => {
         this.storyPage.Illustration = reader.result
       })
       reader.readAsDataURL(e.target.files[0])
     },
     setAudio (e) {
-      let reader = new FileReader()
+      const reader = new FileReader()
       reader.addEventListener('load', e => {
         this.storyPage.Audio = reader.result
       })
       reader.readAsDataURL(e.target.files[0])
     },
     async addStoryPageWord (wordId) {
-      let { storyPageWord } = await this.$api.addStoryPageWord(this.storyPage.Id, wordId)
+      const { storyPageWord } = await this.$api.addStoryPageWord(this.storyPage.Id, wordId)
       this.words.push(this.$store.getters.wordById(storyPageWord.WordId))
     },
     async removeStoryPageWord (wordId) {
-      let storyPageWord = await this.$api.removeStoryPageWord(this.storyPage.Id, wordId)
+      const storyPageWord = await this.$api.removeStoryPageWord(this.storyPage.Id, wordId)
       this.words.splice(this.words.findIndex(word => word.Id === storyPageWord.WordId), 1)
     }
   },
   async mounted () {
-    let storyPageId = this.$route.params.id
+    const storyPageId = this.$route.params.id
     this.storyPage = await this.$api.getStoryPage(storyPageId)
     this.words = await this.$api.getStoryPageWords(storyPageId)
   }

@@ -43,7 +43,7 @@ export default {
     }
   },
   async mounted () {
-    let storyId = this.$route.params.id
+    const storyId = this.$route.params.id
     this.story = await this.$api.getStory(storyId)
   }
 }

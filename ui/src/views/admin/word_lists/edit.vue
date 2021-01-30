@@ -45,16 +45,16 @@ export default {
       this.$api.deleteWordList(this.wordList.Id)
     },
     async addWordListWord (wordId) {
-      let { wordListWord } = await this.$api.addWordListWord(this.wordList.Id, wordId)
+      const { wordListWord } = await this.$api.addWordListWord(this.wordList.Id, wordId)
       this.words.push(this.$store.getters.wordById(wordListWord.WordId))
     },
     async removeWordListWord (wordId) {
-      let wordListWord = await this.$api.removeWordListWord(this.wordList.Id, wordId)
+      const wordListWord = await this.$api.removeWordListWord(this.wordList.Id, wordId)
       this.words.splice(this.words.findIndex(word => word.Id === wordListWord.WordId), 1)
     }
   },
   async mounted () {
-    let wordListId = this.$route.params.id
+    const wordListId = this.$route.params.id
     this.wordList = await this.$api.getWordList(wordListId)
     this.words = await this.$api.getWordListWords(wordListId)
   }
