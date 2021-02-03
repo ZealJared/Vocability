@@ -12,7 +12,7 @@ export default class Api {
   }
 
   request (method, url, data, noUser) {
-    url = 'https://vocability-api.zealmayfield.com/' + url
+    url = 'http://localhost/' + url
     method = method.toUpperCase()
     const options = {
       method: method
